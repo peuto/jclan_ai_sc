@@ -1,3 +1,4 @@
+# coding=utf-8
 from flask import Flask, request
 from flask_cors import *
 import json
@@ -11,7 +12,7 @@ app.config['JSON_AS_ASCII'] = False
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return '<h1>JClan AI Edu</h1>'
 
 
 if __name__ == '__main__':
