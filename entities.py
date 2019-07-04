@@ -20,9 +20,13 @@ class User(Base):
     gender = Column(Boolean, nullable=False)
     open_id = Column(String(64), nullable=False)
 
-    def to_json(self):
+    def to_json(self, message=None):
         dict = self.__dict__
         dict.pop("_sa_instance_state")
+        if message is not None:
+            print("additional")
+            dict["msg"] = message.message
+            dict["code"] = message.code
         print(dict)
-        str_json = json.dumps(dict)
+        str_json = json.dumps(dict, ensure_ascii=False)
         return str_json
