@@ -15,7 +15,7 @@ app.config['JSON_AS_ASCII'] = False
 
 
 db_mananager = DBManager("mysql+mysqlconnector", "mysql57.rdsmlq1es7zb7bt.rds.gz.baidubce.com:3306","rdsroot","jclan@2019", "JClan_AI")
-if db_mananager != None:
+if db_mananager is not None:
     print("DB is OK!")
 
 
